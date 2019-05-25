@@ -1,5 +1,5 @@
 {% set name = "rst2pdf" %}
-{% set version = "0.94" %}
+{% set version = "0.94.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ad67095dbc15f9d8a34452874c776f5851ef3c0520674849fa396283192a2508
+  sha256: f92d959507c95c4808d0b724dc97f00e90f3808da3d8a7404b52420574e014ea
   patches:
     # Required to support newer report lab versions, should be fixed in the next release
     - 771-fix-reportlab-import.patch
