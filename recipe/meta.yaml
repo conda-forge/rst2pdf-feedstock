@@ -8,16 +8,13 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f92d959507c95c4808d0b724dc97f00e90f3808da3d8a7404b52420574e014ea
-  patches:
-    # Required to support newer report lab versions, should be fixed in the next release
-    - 771-fix-reportlab-import.patch
 
 build:
   number: 0
   noarch: python
   entry_points:
     - rst2pdf = rst2pdf.createpdf:main
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
