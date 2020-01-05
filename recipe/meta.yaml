@@ -19,13 +19,13 @@ build:
 requirements:
   host:
     - pip
-    - python <3
+    - python
   run:
     - docutils
     - jinja2
     - pdfrw
     - pygments
-    - python <3
+    - python
     - reportlab
     - setuptools
     - six
