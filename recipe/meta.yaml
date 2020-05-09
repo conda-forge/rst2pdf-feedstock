@@ -1,20 +1,20 @@
 {% set name = "rst2pdf" %}
-{% set version = "0.96" %}
+{% set version = "0.97" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 69ce86b8cfad8da366e0c52caccd9d1aa617e69ca5c3a50feb5519e829d198c4
+  sha256: 343a2a75b2fe8cdf174c170a547a43b294129e68e24be8c18a6b9d1494c9f0b1
 
 build:
   number: 0
   noarch: python
   entry_points:
     - rst2pdf = rst2pdf.createpdf:main
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
