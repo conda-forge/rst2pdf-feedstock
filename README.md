@@ -5,7 +5,7 @@ Home: https://rst2pdf.org
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Convert reStructured Text to PDF via ReportLab.
 
