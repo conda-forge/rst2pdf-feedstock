@@ -31,6 +31,7 @@ requirements:
     - six
     - smartypants
     - importlib_metadata
+    - packaging
 
 test:
   imports:
