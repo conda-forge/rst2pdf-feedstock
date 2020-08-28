@@ -30,6 +30,7 @@ requirements:
     - setuptools
     - six
     - smartypants
+    - importlib_metadata
 
 test:
   imports:
