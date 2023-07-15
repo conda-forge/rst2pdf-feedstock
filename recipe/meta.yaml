@@ -1,43 +1,47 @@
 {% set name = "rst2pdf" %}
-{% set version = "0.98" %}
+{% set version = "0.100" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 10240482bcdf93e28e2300e4742fc5ce54c445deb001d54ae3c627419607e51c
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rst2pdf-{{ version }}.tar.gz
+  sha256: 664c3c16e6d3dea274e840a436eac4dba6cb50ab6af3162fc9d5716be3cb7b42
 
 build:
-  number: 0
-  noarch: python
   entry_points:
     - rst2pdf = rst2pdf.createpdf:main
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
-    - pip
-    - python
-  run:
-    - docutils
-    - jinja2
-    - pdfrw
-    - pygments
-    - python
-    - reportlab
+    - python >=3.8
     - setuptools
-    - six
-    - smartypants
-    - importlib_metadata
+    - setuptools-scm
+    - wheel
+    - pip
+  run:
+    - python >=3.8
+    - docutils
+    - importlib-metadata
+    - jinja2
     - packaging
+    - pygments
+    - pyyaml
+    - reportlab
+    - smartypants
 
 test:
   imports:
     - rst2pdf
   commands:
+    - pip check
     - rst2pdf --help
+  requires:
+    - pip
 
 about:
   home: https://rst2pdf.org
