@@ -14,17 +14,17 @@ build:
     - rst2pdf = rst2pdf.createpdf:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - setuptools-scm
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - docutils
     - importlib-metadata
     - jinja2
@@ -42,6 +42,7 @@ test:
     - rst2pdf --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://rst2pdf.org
