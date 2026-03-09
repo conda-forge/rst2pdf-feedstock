@@ -1,5 +1,5 @@
 {% set name = "rst2pdf" %}
-{% set version = "0.104" %}
+{% set version = "0.105" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rst2pdf-{{ version }}.tar.gz
-  sha256: d68e8c721841e93d1e251b8d8bc9e766a42758cfbbf99469625128c4bb0495b3
+  sha256: 857e8741014ec5015f7a00aafb5dccbb56378ef4c1da55a828d44bcf5ff3acdb
 
 build:
   entry_points:
